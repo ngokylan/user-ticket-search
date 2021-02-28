@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text rendering should be match with snapshot 1`] = `
+<span
+  className="sc-bdfBwQ typography"
+  data-testid="typography-default"
+/>
+`;

@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlaceholderHeader rendering should be match with snapshot 1`] = `
+Array [
+  <div
+    className="header-wrapper header-wrapper--has-buttons header-wrapper--has-back header-wrapper--has-tabs header-wrapper--has-subheading"
+    data-testid="header-wrapper-default"
+  >
+    <div
+      className="header header--subpage"
+    >
+      <div
+        className="header__base"
+      >
+        <div
+          className="header__top"
+        >
+          <div
+            className="header-btns header-btns--placeholder"
+          />
+          <div
+            className="header__title-wrapper"
+          >
+            <div
+              className="header__title-block-wrapper"
+            >
+              <div
+                className="header__title-block header__title-block--placeholder"
+              />
+              <h2
+                className="header__sub-heading header__sub-heading--placeholder"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="tabs"
+          id="Tab"
+        >
+          <nav
+            className="tabs__nav"
+            id="TabNav"
+          >
+            <ul>
+              <li
+                className="tabs__item tabs__item--placeholder"
+                key="0"
+              />
+              <li
+                className="tabs__item tabs__item--placeholder"
+                key="1"
+              />
+              <li
+                className="tabs__item tabs__item--placeholder"
+                key="2"
+              />
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="header-wrapper__spacing"
+  />,
+]
+`;

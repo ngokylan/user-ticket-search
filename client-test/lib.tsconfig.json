@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "skipLibCheck": false,
+    "lib": ["es2017", "dom"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "outDir": "dist",
+    "rootDir": "src",
+    "declaration": true
+  },
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "**/*.spec.js",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "**/*.visual.ts",
+    "**/*.visual.tsx",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "config",
+    "dist",
+    "scripts",
+    "src/App.tsx",
+    "src/index.tsx",
+    "src/_demo"
+  ]
+}

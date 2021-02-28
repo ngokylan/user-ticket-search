@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input rendering should be match with snapshot 1`] = `
+<input
+  aria-invalid={false}
+  className="input"
+  data-testid="input-default"
+  disabled={false}
+  hidden={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyPress={[Function]}
+  onMouseDown={[Function]}
+  readOnly={false}
+  tabIndex={0}
+  type="text"
+/>
+`;

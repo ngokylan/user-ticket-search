@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Col rendering should be match with snapshot 1`] = `
+<div
+  className="col"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props align is auto 1`] = `
+<div
+  className="col align-self-auto"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props className is className 1`] = `
+<div
+  className="col className"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props className is false 1`] = `
+<div
+  className="col"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props className is null 1`] = `
+<div
+  className="col"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props className is undefined 1`] = `
+<div
+  className="col"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props grow is 2 1`] = `
+<div
+  className="col flex-grow-2"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props isAuto is false 1`] = `
+<div
+  className="col"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props isAuto is true 1`] = `
+<div
+  className="col col-auto"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props isFill is false 1`] = `
+<div
+  className="col"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props isFill is true 1`] = `
+<div
+  className="col flex-fill"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props key is 2 1`] = `
+<div
+  className="col"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props lg is 2 1`] = `
+<div
+  className="col col-lg-2"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props md is 2 1`] = `
+<div
+  className="col col-md-2"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props offset is 2 1`] = `
+<div
+  className="col offset-2"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props order is 2 1`] = `
+<div
+  className="col order-2"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props shrink is 2 1`] = `
+<div
+  className="col flex-shrink-2"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props sm is 2 1`] = `
+<div
+  className="col col-sm-2"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props span is 2 1`] = `
+<div
+  className="col col-2"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props xl is 2 1`] = `
+<div
+  className="col col-xl-2"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props xs is 2 1`] = `
+<div
+  className="col col-xs-2"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props xxl is 2 1`] = `
+<div
+  className="col col-xxl-2"
+  role="cell"
+/>
+`;
+
+exports[`Col rendering should be match with snapshot when props xxxl is 2 1`] = `
+<div
+  className="col col-xxxl-2"
+  role="cell"
+/>
+`;

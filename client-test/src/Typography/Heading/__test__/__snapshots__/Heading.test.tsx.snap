@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading rendering should be match with snapshot 1`] = `
+<h3
+  className="sc-dlfnbm typography heading-size-rg"
+  data-testid="typography-default"
+/>
+`;

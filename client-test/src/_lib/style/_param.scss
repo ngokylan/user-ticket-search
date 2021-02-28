@@ -1,0 +1,143 @@
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
+  Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-size: 16px;
+$font-size-base: 16px;
+$font-weight-base: 400;
+$line-height-base: 1.5;
+$body-color: #212121;
+$body-bg: #fff;
+// Colors
+$white: #fff !default;
+$gray-100: #f6f6f6 !default;
+$gray-200: #f6f6f6 !default;
+$gray-300: #ededed !default;
+$gray-400: #dbdbdb !default;
+$gray-500: #adadad !default;
+$gray-600: #8c8c8c !default;
+$gray-700: #545454 !default;
+$gray-800: #212121 !default;
+$gray-900: #212121 !default;
+$gray-rgba-200: rgba(0, 0, 0, 0.04);
+$gray-rgba-300: rgba(0, 0, 0, 0.07);
+$gray-rgba-400: rgba(0, 0, 0, 0.14);
+$gray-rgba-600: rgba(0, 0, 0, 0.45);
+$gray-rgba-700: rgba(0, 0, 0, 0.67);
+$gray-rgba-800: rgba(0, 0, 0, 0.87);
+$white-rgba-200: rgba(255, 255, 255, 0.09);
+$white-rgba-300: rgba(255, 255, 255, 0.15);
+$white-rgba-400: rgba(255, 255, 255, 0.25);
+$white-rgba-600: rgba(255, 255, 255, 0.45);
+$white-rgba-700: rgba(255, 255, 255, 0.67);
+$white-rgba-800: rgba(255, 255, 255, 0.87);
+$black: #000 !default;
+$primary: #19579f !default;
+$primary-light: #2972c4 !default;
+$primary-dark: #0d3f78 !default;
+$primary-bg: #e6f1ff !default;
+$primary-border: #8fc3ff !default;
+$secondary: #b1101e !default;
+$secondary-light: #d62735 !default;
+$secondary-dark: #8a000b !default;
+$secondary-bg: #fff0f1 !default;
+$secondary-border: #ff9fa7 !default;
+$success: #006631 !default;
+$success-light: #078c47 !default;
+$success-dark: #00401f !default;
+$success-bg: #e6fff2 !default;
+$success-border: #81e8b3 !default;
+$info: #19579f !default;
+$info-light: #2972c4 !default;
+$info-dark: #0d3f78 !default;
+$info-bg: #e6f1ff !default;
+$info-border: #8fc3ff !default;
+$warning: #ffc53d !default;
+$warning-light: #ffd666 !default;
+$warning-dark: #faad14 !default;
+$warning-bg: #fffbe6 !default;
+$warning-border: #ffe58f !default;
+$danger: #b1101e !default;
+$danger-light: #d62735 !default;
+$danger-dark: #8a000b !default;
+$danger-bg: #fff0f1 !default;
+$danger-border: #ff9fa7 !default;
+
+$transition-speed-normal: 250ms;
+$transition-speed-slow: 350ms;
+
+// Shadows
+$shadow-100: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.14);
+
+$shadow-200: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.14);
+
+$shadow-inset-200: inset 0 3px 6px 0 rgba(0, 0, 0, 0.1),
+  inset 0 3px 6px 0 rgba(0, 0, 0, 0.14);
+
+$shadow-300: 0 10px 20px 0 rgba(0, 0, 0, 0.12), 0 6px 6px 0 rgba(0, 0, 0, 0.14);
+
+$shadow-400: 0 14px 28px 0 rgba(0, 0, 0, 0.16),
+  0 10px 10px 0 rgba(0, 0, 0, 0.14);
+
+// Layout
+$SidePanelWidthDesktop: 344px;
+$SidePanelWidthTablet: 344px;
+
+$ContentPaddingMobile: 16px;
+$ContentPaddingTablet: 36px;
+$ContentPaddingDesktop: 44px;
+
+/* Z-indexes */
+
+$zIndex-body: 1;
+$zIndex-pageContent: 10;
+$zIndex-header: 100;
+$zIndex-pageHeader: 200;
+$zIndex-components: 300;
+$zIndex-notifications: 400;
+$zIndex-navigation: 500;
+$zIndex-modal: 1000;
+$small-mobile-max: 599.9px;
+$mobile-min: 600px;
+$mobile-max: 839.9px;
+$tablet-min: 840px;
+$tablet-max: 1023.9px;
+$desktop-min: 1024px;
+$desktop-max: 1279.9px;
+$desktop-lg-min: 1280px;
+$desktop-lg-max: 1439.9px;
+$desktop-xl-min: 1440px;
+$desktop-xl-max: 1879.9px;
+
+// Variables
+$aqua: #7fdbff !default;
+$blue: #0074d9 !default;
+$navy: #001f3f !default;
+$teal: #39cccc !default;
+$green: #2ecc40 !default;
+$olive: #3d9970 !default;
+$lime: #01ff70 !default;
+// Warm
+$yellow: #ffdc00 !default;
+$orange: #ff851b !default;
+$red: #ff4136 !default;
+$fuchsia: #f012be !default;
+$purple: #b10dc9 !default;
+$maroon: #85144b !default;
+// Gray Scale
+$white: #fff !default;
+$silver: #ddd !default;
+$gray: #aaa !default;
+$black: #111 !default;
+// Colors (from /themes/default/colors)
+$white: #fff !default;
+$black: #111 !default;
+$primary: $blue !default;
+$success: $green !default;
+$warning: $orange !default;
+$error: $red !default;
+$dull: $gray !default;
+$color-variation: 10% !default;
+$transparency: 0.2 !default;
+// Spaces
+$separation: 0.6em !default;
+$breakpoint: 60em !default;

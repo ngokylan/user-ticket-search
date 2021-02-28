@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button rendering should be match with snapshot 1`] = `
+<button
+  className="sc-bdfBwQ gjsWpT btn btn--default btn--is-uppercase"
+  data-testid="btn-default"
+  onBlur={[Function]}
+  onClick={[Function]}
+  role="button"
+  type="button"
+>
+  <span
+    className="btn__hover"
+  />
+  <span
+    className="btn__focused"
+  />
+  <span
+    className="btn__pressed"
+  />
+</button>
+`;

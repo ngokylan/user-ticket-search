@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header::HeaderButtons rendering should be match with snapshot 1`] = `
+<div
+  className="header-btns"
+>
+  <span
+    className="header-btns__toggle"
+    data-visible-desktop="false"
+    data-visible-mobile="false"
+  />
+</div>
+`;

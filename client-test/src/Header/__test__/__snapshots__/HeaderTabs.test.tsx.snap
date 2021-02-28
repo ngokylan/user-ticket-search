@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header::HeaderTabs rendering should be match with snapshot 1`] = `
+<div
+  className="tabs"
+  id="tab"
+>
+  <nav
+    className="tabs__nav"
+    id="tab-nav"
+  >
+    <ul />
+  </nav>
+</div>
+`;

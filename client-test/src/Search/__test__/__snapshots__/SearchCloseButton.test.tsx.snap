@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search::SearchClearButton rendering should be match with snapshot 1`] = `
+<div
+  className="search__close"
+>
+  <button
+    className="sc-bdfBwQ gjsWpT btn btn--default btn--is-uppercase btn--is-text"
+    data-testid="btn-default"
+    onBlur={[Function]}
+    onClick={[Function]}
+    role="button"
+    type="button"
+  >
+    <span
+      className="btn__label"
+      data-testid="btn-label-default"
+    >
+      <span
+        className="sc-iBPRYJ typography text-size-button"
+        data-testid="typography-default"
+      >
+        Cancel
+      </span>
+    </span>
+    <span
+      className="btn__hover"
+    />
+    <span
+      className="btn__focused"
+    />
+    <span
+      className="btn__pressed"
+    />
+  </button>
+</div>
+`;

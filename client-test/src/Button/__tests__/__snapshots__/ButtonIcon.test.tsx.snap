@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button::ButtonIcon rendering should be match with snapshot 1`] = `
+<span
+  className="btn__icon"
+  data-testid="btn-icon-default"
+/>
+`;
+
+exports[`Button::ButtonIcon rendering should be match with snapshot 2`] = `
+<span
+  className="btn__icon"
+  data-testid="btn-icon-custom-id"
+>
+  custom-icon
+</span>
+`;

@@ -1,0 +1,15 @@
+@import '../../_lib/style/index';
+
+.layout__main-content {
+  padding: 24px $ContentPaddingMobile 48px $ContentPaddingMobile;
+  min-height: 100%;
+  width: 100%;
+
+  @include mobile {
+    padding: $ContentPaddingTablet;
+  }
+
+  @include tablet {
+    padding: $ContentPaddingDesktop;
+  }
+}

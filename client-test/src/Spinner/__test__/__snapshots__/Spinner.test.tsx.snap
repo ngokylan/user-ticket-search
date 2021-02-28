@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner rendering should match snapshot 1`] = `
+<div
+  role="status"
+>
+  <span
+    aria-label="Loading..."
+    className="spinner"
+    data-testid="spinner-default"
+  >
+    <svg
+      height="30px"
+      viewBox="0 0 50 50"
+      width="30px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        className="spinner__path"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        strokeWidth="2"
+      />
+    </svg>
+  </span>
+</div>
+`;

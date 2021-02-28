@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paragraph rendering should be match with snapshot 1`] = `
+<p
+  className="-typography text-size-rg"
+  data-testid="-typography-default"
+/>
+`;

@@ -1,0 +1,15 @@
+@import '../../_lib/style/index';
+.header__title-addon {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  flex-shrink: 0;
+  .badge {
+  }
+  .badge__label {
+    display: none;
+    @include mobile {
+      display: inline-block;
+    }
+  }
+}

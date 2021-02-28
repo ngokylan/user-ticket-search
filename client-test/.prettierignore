@@ -1,0 +1,4 @@
+/node_modules
+/**/*.md
+/.buildstatus
+bitbucket-pipelines.yml

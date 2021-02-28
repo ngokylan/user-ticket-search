@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout rendering should be match with snapshot 1`] = `
+<div
+  className="layout menu-status-wide elements layout--theme-default"
+>
+  <div
+    className="layout__main-app"
+  />
+</div>
+`;

@@ -1,0 +1,126 @@
+@import '../_lib/style/index';
+.typography {
+  margin: 0;
+  font-family: $font-family;
+  /* Style */
+  &.font-weight-bold {
+    font-weight: bold;
+  }
+  &.font-italic {
+    font-style: italic;
+  }
+  &.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  /* Alignment */
+  &.text-justify {
+    text-align: justify;
+  }
+  &.text-left {
+    text-align: left;
+  }
+  &.text-right {
+    text-align: right;
+  }
+  &.text-center {
+    text-align: center;
+  }
+  /* Decoration */
+  &.text-decoration-overline {
+    text-decoration: overline;
+  }
+  &.text-decoration-lineThrough {
+    text-decoration: line-through;
+  }
+  &.text-decoration-underline {
+    text-decoration: underline;
+  }
+  /* Transform */
+  &.text-transform-lowercase {
+    text-transform: lowercase;
+  }
+  &.text-transform-uppercase {
+    text-transform: uppercase;
+  }
+  &.text-transform-capitalize {
+    text-transform: capitalize;
+  }
+  /* Size - Title */
+  &.title-size-xl {
+    @include text-style-title-xl;
+  }
+  &.title-size-lg {
+    @include text-style-title-lg;
+  }
+  &.title-size-rg {
+    @include text-style-title-rg;
+  }
+  &.title-size-sm {
+    @include text-style-title-sm;
+  }
+  &.title-size-xs {
+    @include text-style-title-xs;
+  }
+  &.title-size-xxs {
+    @include text-style-title-xxs;
+  }
+  /* Size - Heading */
+  &.heading-size-rg {
+    @include text-style-heading;
+  }
+  &.heading-size-sm {
+    @include text-style-heading-sm;
+  }
+  &.heading-size-xs {
+    @include text-style-heading-xs;
+  }
+  &.heading-size-xxs {
+    @include text-style-heading-xxs;
+  }
+  /* Size - Body */
+  &.text-size-lg {
+    @include text-style-body-lg;
+  }
+  &.text-size-rg {
+    @include text-style-body-rg;
+  }
+  &.text-size-sm {
+    @include text-style-body-sm;
+  }
+  &.text-size-xs {
+    @include text-style-body-xs;
+  }
+  &.text-size-button {
+    @include text-style-button;
+  }
+  &.text-size-status {
+    @include text-style-status;
+  }
+  /* Colour */
+  &.text-color-primary {
+    color: $primary;
+  }
+  &.text-color-secondary {
+    color: $secondary;
+  }
+  &.text-color-gray {
+    color: $gray-700;
+  }
+  &.text-color-information {
+    color: $info;
+  }
+  &.text-color-warning {
+    color: $warning;
+  }
+  &.text-color-success {
+    color: $success;
+  }
+  &.text-color-danger {
+    color: $danger;
+  }
+  &.text-color-white {
+    color: $white;
+  }
+}
