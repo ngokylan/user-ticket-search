@@ -1,15 +1,6 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
-  "linterOptions": {
-    "exclude": [
-      "config/**/*.js",
-      "node_modules/**/*.ts",
-      "coverage/lcov-report/*.js"
-    ]
-  },
+  "extends": ["tslint-react", "tslint-config-prettier"],
   "rules": {
-    "jsx-boolean-value": false,
-    "ordered-imports": true,
     "align": [true, "parameters", "statements"],
     "ban": false,
     "class-name": true,
@@ -19,21 +10,15 @@
     "forin": true,
     "indent": [true, "spaces"],
     "interface-name": [true, "never-prefix"],
-    "object-literal-sort-keys": false,
     "jsdoc-format": true,
     "jsx-no-lambda": false,
     "jsx-no-multiline-js": false,
     "label-position": true,
     "max-line-length": [true, 120],
-    "member-ordering": [
-      true,
-      "public-before-private",
-      "static-before-instance",
-      "variables-before-functions"
-    ],
+    "member-ordering": false,
     "no-arg": true,
     "no-bitwise": true,
-    "no-console": [true, "warning", "time", "timeEnd", "trace"],
+    "no-console": [true, "time", "timeEnd", "trace"],
     "no-consecutive-blank-lines": true,
     "no-construct": true,
     "no-duplicate-variable": true,
@@ -53,7 +38,7 @@
     ],
     "quotemark": [true, "single", "jsx-double"],
     "radix": true,
-    "semicolon": [true, "always"],
+    "semicolon": false,
     "switch-default": true,
     "trailing-comma": [false],
     "triple-equals": [true, "allow-null-check"],

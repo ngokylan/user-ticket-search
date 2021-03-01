@@ -1,5 +1,0 @@
-{
-  "fileServerFolder": "./src",
-  "integrationFolder": "./src",
-  "testFiles": "**/*.spec.js"
-}

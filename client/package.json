@@ -1,108 +1,128 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "User-Search-Zendesk",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "UI",
+    "component"
+  ],
+  "homepage": "",
   "private": true,
-  "proxy": "http://server:8000",
+  "main": "main.js",
+  "module": "main.js",
+  "types": "main.d.ts",
   "dependencies": {
-    "axios": "^0.19.0",
-    "react": "^16.8.6",
-    "webpack": "4.29.6",
-    "cors": "^2.8.5",
-    "react-app-rewire-hot-loader": "^2.0.1",
-    "react-app-rewired": "^2.1.8",
-    "react-dom": "^17.0.1",
-    "react-hot-loader": "^4.13.0",
-    "react-redux": "^7.2.2",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "redux": "^4.0.5",
-    "uuid": "^8.3.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --coverage --watchAll",
-    "test-ci": "CI=true react-scripts test --env=jsdom --coverage --verbose",
-    "eject": "react-scripts eject",
-    "format": "prettier --write \"src/**/*.ts*\"",
-    "start-mock-server": "node server/middlewares.ts",
-    "lint": "eslint --ext=jsx,ts,tsx src",
-    "test-badges": "node_modules/.bin/istanbul-badges-readme",
-    "test:e2e": "cypress open"
+    "react": "^16.13.1",
+    "@juggle/resize-observer": "^3.3.0",
+    "classnames": "2.2.6",
+    "custom-event": "^1.0.1",
+    "popper.js": "^1.16.1",
+    "rc-calendar": "9.15.11",
+    "rc-time-picker": "^3.7.2",
+    "react-dropzone": "11.3.1",
+    "react-focus-lock": "^2.2.1",
+    "react-popper": "^2.2.4",
+    "react-select": "^4.1.0",
+    "resize-observer": "^1.0.0"
   },
   "devDependencies": {
-    "@types/axios": "0.14.0",
-    "@types/enzyme": "3.1.15",
-    "@types/enzyme-adapter-react-16": "1.0.3",
-    "@types/i18n": "0.8.3",
-    "@types/i18next": "12.1.0",
-    "@types/i18next-browser-languagedetector": "2.0.1",
-    "@types/jest": "^26.0.15",
-    "@types/node": "10.12.12",
-    "@types/react": "^16.14.4",
-    "@types/react-dom": "16.0.11",
-    "@types/react-redux": "6.0.10",
-    "@types/react-router": "4.4.1",
-    "@types/react-router-dom": "4.3.1",
-    "@types/react-test-renderer": "16.0.3",
-    "@types/reactstrap": "6.4.3",
-    "@types/redux-form": "7.4.12",
-    "@types/redux-mock-store": "^1.0.2",
-    "@types/sanitize-html": "^1.23.3",
-    "@types/uuid": "3.4.4",
-    "@types/yup": "0.26.3",
-    "cypress": "^6.5.0",
-    "enzyme": "3.8.0",
-    "enzyme-adapter-react-16": "1.7.1",
-    "eslint": "^7.20.0",
-    "istanbul-badges-readme": "^1.2.0",
-    "jest-enzyme": "^7.1.2",
-    "json-server": "^0.14.2",
-    "moxios": "0.4.0",
-    "nodemon": "^2.0.7",
-    "react-app-rewire-typescript": "2.0.2",
-    "react-test-renderer": "16.6.3",
-    "redux-mock-store": "^1.5.4",
-    "typescript": "^4.1.2"
+    "@babel/helper-define-map": "^7.12.13",
+    "@olavoparno/jest-badges-readme": "1.5.1",
+    "@types/classnames": "^2.2.6",
+    "@types/enzyme": "3.10.8",
+    "@types/jest": "26.0.20",
+    "@types/node": "^14.14.31",
+    "@types/rc-time-picker": "^3.4.1",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^16.0.0",
+    "@types/react-select": "^4.0.13",
+    "@types/react-test-renderer": "17.0.1",
+    "@types/styled-components": "5.1.7",
+    "autoprefixer": "^10.2.4",
+    "css-loader": "^5.1.0",
+    "cypress": "6.5.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.6",
+    "enzyme-to-json": "3.6.1",
+    "file-loader": "^6.2.0",
+    "ghooks": "2.0.4",
+    "jest-image-snapshot": "4.4.0",
+    "mini-css-extract-plugin": "^1.3.9",
+    "moment": ">= 2.9.0",
+    "moment-locales-webpack-plugin": "^1.0.7",
+    "node-sass": "^5.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "path": "0.12.7",
+    "postcss-loader": "^5.0.0",
+    "prettier": "2.2.1",
+    "pretty-quick": "3.1.0",
+    "puppeteer": "8.0.0",
+    "react-docgen-typescript": "^1.12.3",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^4.0.3",
+    "react-styleguidist": "11.1.5",
+    "react-test-renderer": "17.0.1",
+    "sass-loader": "^11.0.1",
+    "styled-components": "^5.2.1",
+    "ts-loader": "^8.0.17",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-react": "^5.0.0",
+    "typescript": "^4.2.2",
+    "webpack-cli": "^4.5.0"
+  },
+  "peerDependencies": {
+    "moment": ">= 2.9.0",
+    "react-dom": "^16.0.0"
+  },
+  "scripts": {
+    "lint": "tslint --project tsconfig.json -c tslint.json",
+    "prettier": "prettier --check \"src/**/*.tsx\" \"src/**/*.ts\"",
+    "prettier-fix": "prettier --write \"src/**/*.tsx\" \"src/**/*.ts\"",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build-lib": "rm -rf dist && webpack",
+    "build-readme": "node_modules/.bin/jest-badges-readme",
+    "build-doc": "npx styleguidist build",
+    "test": "react-scripts test --roots \"${PWD}/src\" --coverage --testMatch \"${PWD}/src/**/*.test.{ts,tsx}\" --verbose --watch",
+    "test-ci": "react-scripts test --roots \"${PWD}/src\" --testMatch \"${PWD}/src/**/*.test.{ts,tsx}\" --coverage --ci --verbose --watchAll=false",
+    "test-spec": "./scripts/bash.sh",
+    "test-spec-ci": "CI=true react-scripts test --roots \"${PWD}/src\" --testMatch \"${PWD}/src/**/*.visual.{js,ts}\" --verbose --watchAll=false",
+    "test-e2e": "cypress open",
+    "test-e2e-ci": "cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 10",
+    "not op_mini all"
+  ],
   "jest": {
     "coverageReporters": [
-      "html",
       "json-summary",
-      "text"
+      "text",
+      "lcov"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!/node_modules/",
+      "!src/index.tsx",
+      "!src/main.ts",
+      "!src/_demo/*"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
       }
-    },
-    "testMatch": [
-      "**/__tests__ /**/*.+(ts|tsx|js)",
-      "**/?(*.)+(spec|test).+(ts|tsx|js)"
-    ]
-  },
-  "config": {
-    "ghooks": {
-      "pre-commit": "pretty-quick --staged && yarn lint && yarn format && yarn test && yarn test-badges && git add ./README.md"
     }
-  }
+  }  
 }
