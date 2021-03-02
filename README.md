@@ -16,7 +16,7 @@ Below is the test coverage summary for this repo
 ```sh
 docker-compose build
 ```
-Ensure also that [Docker is installed and running](https://www.docker.com/products/docker-desktop) on your work station
+Ensure that [Docker is installed and running](https://www.docker.com/products/docker-desktop) on your work station
 
 ### 2. Start container
 
