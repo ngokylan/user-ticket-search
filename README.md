@@ -41,6 +41,8 @@ $ yarn test:e2e
 
 ### 3. How to use frontend app
 
+Code locates in `client` folder in this repo
+
 Client url to run application
 
 ```
@@ -64,6 +66,8 @@ ticket; {"fieldname":"value"}
 Where `{fieldname}` is the field and `{value}` is the filter value
 
 ### 4. How to use backend app
+
+Code locates in `server` folder in this repo
 
 Backend url for REST API
 
