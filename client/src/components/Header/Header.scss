@@ -1,0 +1,328 @@
+@import '../../_lib/style/index';
+
+$this: '.header';
+
+@mixin header-height($height) {
+  + .header-wrapper__spacing {
+    height: #{$height + 48}px; // 48: top menu
+  }
+}
+
+.header-wrapper {
+  font-family: $font-family;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  box-shadow: $shadow-200;
+
+  & + &__spacing {
+    display: none;
+  }
+
+  @include desktop-max {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+
+    &:after {
+      content: '';
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    & + &__spacing {
+      display: block;
+      width: 100%;
+      transition: height 0.3s;
+    }
+
+    @include header-height(48);
+
+    &.header-wrapper--has-subheading {
+      @include header-height(72);
+
+      &.header-wrapper--has-tabs {
+        @include header-height(120);
+      }
+    }
+
+    &.header-wrapper--has-tabs {
+      @include header-height(96);
+    }
+
+    @include mobile {
+      @include header-height(64);
+
+      &.header-wrapper--has-subheading {
+        @include header-height(91);
+
+        &.header-wrapper--has-tabs {
+          @include header-height(131);
+        }
+      }
+
+      &.header-wrapper--has-tabs {
+        @include header-height(104);
+      }
+    }
+
+    @include tablet {
+      @include header-height(80);
+
+      &.header-wrapper--has-subheading {
+        @include header-height(107);
+
+        &.header-wrapper--has-tabs {
+          @include header-height(131);
+        }
+      }
+
+      &.header-wrapper--has-tabs {
+        @include header-height(112);
+      }
+    }
+
+    @include desktop {
+      @include header-height(96);
+
+      &.header-wrapper--has-subheading {
+        @include header-height(123);
+
+        &.header-wrapper--has-tabs {
+          @include header-height(147);
+        }
+      }
+
+      &.header-wrapper--has-tabs {
+        @include header-height(120);
+      }
+    }
+  }
+
+  #{ $this }__base {
+    transition: all 0.3s;
+    opacity: 1;
+    max-height: 320px;
+    min-height: 48px;
+    padding-left: 0px;
+
+    @include mobile {
+      padding: 8px 0;
+    }
+
+    @include tablet {
+      padding: 16px 0;
+    }
+
+    @include desktop {
+      padding: 24px 0;
+    }
+  }
+
+  &--bulk-actions #{ $this }__base {
+    max-height: 48px;
+
+    @include mobile {
+      max-height: 64px;
+    }
+
+    @include tablet {
+      max-height: 80px;
+    }
+
+    @include desktop {
+      max-height: 96px;
+    }
+  }
+
+  &--search #{ $this }__base {
+    max-height: 64px;
+
+    @include mobile {
+      max-height: 64px;
+    }
+
+    @include tablet {
+      max-height: 80px;
+    }
+
+    @include desktop {
+      max-height: 96px;
+    }
+  }
+
+  &--search,
+  &--bulk-actions {
+    #{ $this }__base {
+      overflow: hidden;
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .search,
+    .bulk-actions {
+      z-index: 1;
+    }
+  }
+
+  .search,
+  .bulk-actions {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+}
+
+// Override header spacing for small screens
+@include desktop-max {
+  .layout__main-header {
+    .header-wrapper {
+      &.header-wrapper--search {
+        @include header-height(64);
+
+        @include mobile {
+          @include header-height(64);
+        }
+
+        @include tablet {
+          @include header-height(80);
+        }
+
+        @include desktop {
+          @include header-height(96);
+        }
+      }
+
+      &.header-wrapper--bulk-actions {
+        @include header-height(48);
+
+        @include mobile {
+          @include header-height(64);
+        }
+
+        @include tablet {
+          @include header-height(80);
+        }
+
+        @include desktop {
+          @include header-height(96);
+        }
+      }
+    }
+  }
+}
+
+.layout--is-sidepanel-open .header-wrapper {
+  @include desktop-max {
+    @include desktop {
+      width: calc(100% - 344px);
+    }
+  }
+}
+
+.header {
+  $this: &;
+  display: block;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+    width: 100%;
+    height: 0;
+  }
+
+  &__top {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+  }
+
+  &__title-wrapper {
+    position: relative;
+    display: flex;
+    flex-shrink: 1;
+    flex-grow: 1;
+    overflow: hidden;
+    padding-left: 12px;
+
+    @include mobile {
+      padding-left: 32px;
+    }
+
+    @include tablet {
+      padding-left: 40px;
+    }
+  }
+
+  &__title-block-wrapper {
+    overflow: hidden;
+
+    .header__sub-heading {
+      display: block;
+      width: 100%;
+      color: $gray-700;
+      @include text-ellipsis;
+      @include text-style-body-xs;
+
+      @include mobile {
+        @include text-style-body-sm;
+      }
+    }
+  }
+}
+
+.layout--theme-min {
+  .header-wrapper {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+
+    &:after {
+      content: '';
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    & + .header-wrapper__spacing {
+      display: block;
+      width: 100%;
+      transition: height 0.3s;
+    }
+
+    @include header-height(0);
+
+    &.header-wrapper--has-tabs {
+      @include header-height(52);
+    }
+
+    #{ $this }__base {
+      @include mobile {
+        padding: 0 0 8px 0;
+      }
+
+      @include tablet {
+        padding: 0 0 16px 0;
+      }
+
+      @include desktop {
+        padding: 0 0 24px 0;
+      }
+    }
+  }
+}

@@ -37,6 +37,6 @@
     "scripts",
     "src/App.tsx",
     "src/index.tsx",
-    "src/_demo"
+    "src/pages"
   ]
 }

@@ -4,9 +4,9 @@ const transformer = require('../common/transformer');
 
 /**
  *
- * @param {*} criteria
- * @param {*} filter
- * @param {*} apiVersion
+ * @param {*} string criteria
+ * @param {*} string filter
+ * @param {*} string apiVersion
  */
 async function fetchUsers(
   criteria,
@@ -22,8 +22,8 @@ async function fetchUsers(
 
 /**
  *
- * @param {*} criteria
- * @param {*} filter
+ * @param {*} string criteria
+ * @param {*} string filter
  */
 async function fetchV1Data(criteria, filter) {
   const connection = await dbConnection.connection();  
@@ -55,20 +55,31 @@ async function fetchV1Data(criteria, filter) {
   return transformer.transformTicketsForUser(users, tickets);
 }
 
-function generateFetchUsersQuery(filter) {    
+function generateFetchUsersQuery(filter) {      
     const userQueryAlias = 'u';
     let filterCondition = '';
 
+    let filterParam = null;
+    try {
+      filterParam = JSON.parse(filter);
+    } catch (exception) {
+      //@TODO:
+      /**
+       * - log info message
+       * - always pass filter data to request
+       */
+    }
+
     //generate multiple filter conditions for query
-    if(Object.keys(filter).length) {
-        Object.keys(filter).forEach(column => {
+    if(filterParam && Object.keys(filterParam).length) {
+        Object.keys(filterParam).forEach(column => {
             //add join query keyword for the next condition
             if (filterCondition !== '') {
                 filterCondition += ' AND ';
             }
 
-            if (filter[column]) {
-                filterCondition += `UPPER(${userQueryAlias}.${column}) like '%${(filter[column]).toUpperCase()}%'`;
+            if (filterParam[column]) {
+                filterCondition += `UPPER(${userQueryAlias}.${column}) like '%${(filterParam[column]).toUpperCase()}%'`;
             }                                 
         });
     }

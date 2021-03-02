@@ -1,4 +1,4 @@
 import ReactDOM from 'react-dom';
-import App from './_demo';
+import App from './pages';
 
 ReactDOM.render(<App />, document.getElementById('root'));

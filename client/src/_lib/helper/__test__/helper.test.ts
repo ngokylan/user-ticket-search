@@ -6,7 +6,7 @@ import {
   addClassToElement,
   isElementOfType,
   closestParentById,
-} from '../';
+} from '..';
 
 describe('_lib::helper', () => {
   describe('getClass', () => {

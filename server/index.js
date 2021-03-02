@@ -26,11 +26,15 @@ app.listen(
 );
 
 app.get(`${constantService.API_VERSION.V1}/users`, async (req, res) => {
-  const { filter } = req.query;
-  const parsedFilter = JSON.parse(filter);
-  const result = await fetchUsers('', parsedFilter);
-  return res.send(result);
-  // return res.send(fetchUsers('', ''));
+  try {
+    const { filter } = req.query;    
+    const result = await fetchUsers('', filter);
+    return res.send(result);
+  } catch (exception) {
+    res.status(400).send({
+      message: exception.message
+   });
+  }    
 });
 
 app.get(`${constantService.API_VERSION.V1}/organizations`, async (req, res) => {

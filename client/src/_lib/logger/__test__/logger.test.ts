@@ -1,5 +1,5 @@
 import React from 'react';
-import logger from '../';
+import logger from '..';
 
 const mockError = jest.fn();
 const mockWarn = jest.fn();

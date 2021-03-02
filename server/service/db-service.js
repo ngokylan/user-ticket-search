@@ -7,7 +7,7 @@ let dbConfig = {
     ? process.env.MYSQL_HOST_IP
     : constantService.DEFAULT_CONFIG.host,
   user: process.env.MYSQL_USER
-    ? rocess.env.MYSQL_USER
+    ? process.env.MYSQL_USER
     : constantService.DEFAULT_CONFIG.user,
   password: process.env.MYSQL_PASSWORD
     ? process.env.MYSQL_PASSWORD
