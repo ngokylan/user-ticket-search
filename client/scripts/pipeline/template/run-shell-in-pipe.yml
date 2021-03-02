@@ -1,0 +1,27 @@
+pipelines:
+  custom:
+    build:
+      - step:
+          name: 'Publish: documentation'
+          descripton:
+          image: node:10.15.0
+          caches:
+            - node
+          script:
+            - cleanup() { ./scripts/cleanup-template-app.sh $STAGING_TEMPLATE_APP_AWS_S3_BUCKET $STAGING_AWS_ACCESS_KEY_ID $STAGING_AWS_SECRET_ACCESS_KEY $BITBUCKET_BRANCH $BITBUCKET_COMMIT $TEMPLATE_APP_REPO; }
+            - trap cleanup 0 1
+            - npm uninstall cypress # Delete cypress to make process faster
+            - npm ci
+            - npm rebuild node-sass
+            - npx styleguidist build
+            - apt-get update && apt-get install python-dev -y && curl -O https://bootstrap.pypa.io/get-pip.py && python get-pip.py && pip install awscli
+            - export AWS_ACCESS_KEY_ID=$STAGING_AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$STAGING_AWS_SECRET_ACCESS_KEY VERSION_FILE="elmo_element_version.html"
+            - echo "<li>$(date) :$BITBUCKET_BRANCH - $BITBUCKET_COMMIT</li>" >> $VERSION_FILE
+            - aws s3 sync styleguide s3://$STAGING_AWS_S3_BUCKET/ --delete
+            - aws s3 cp $VERSION_FILE s3://$STAGING_AWS_S3_BUCKET/
+            - aws cloudfront create-invalidation --distribution-id $STAGING_AWS_CloudFront_ID --path "/*"
+
+definitions:
+  caches:
+    npm: $HOME/.npm
+    cypress: $HOME/.cache/Cypress

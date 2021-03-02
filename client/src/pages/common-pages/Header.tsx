@@ -1,11 +1,12 @@
 import React from 'react';
-import Header from '../components/Header';
+import Header from '../../components/Header';
 import {
   SearchIcon,
-} from '../components/Icon';
-import { BadgeType } from '../components/Badge';
-import Search from '../components/Search';
-import { withLayoutAware, LayoutContextProps } from '../components/Layout';
+} from '../../components/Icon';
+import { BadgeType } from '../../components/Badge';
+import Search from '../../components/Search';
+import { withLayoutAware, LayoutContextProps } from '../../components/Layout';
+import { SUGGESTION_SEARCH_FORMAT } from '../../const';
 
 
 type HeaderDemoState = {
@@ -13,10 +14,15 @@ type HeaderDemoState = {
 };
 
 
-class HeaderDemo extends React.Component<LayoutContextProps, HeaderDemoState> {
+class HeaderModule extends React.Component<LayoutContextProps, HeaderDemoState> {
   state: HeaderDemoState = {
     searchQuery: '',
   };
+
+  constructor(props: LayoutContextProps) {
+    super(props);
+    this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+  }
 
   getHeaderButtons = () => [
     {
@@ -50,7 +56,7 @@ class HeaderDemo extends React.Component<LayoutContextProps, HeaderDemoState> {
   };
 
   handleSearchSubmit() {
-    console.log('handleSearchSubmit!');
+    this.props.fetchData(this.state.searchQuery);
   }
 
   handleSearchKeyDown() {
@@ -107,6 +113,7 @@ class HeaderDemo extends React.Component<LayoutContextProps, HeaderDemoState> {
             onSubmit={this.handleSearchSubmit}
             onKeyPress={this.handleSearchKeyDown}
             isSubmitEnabledAlways={true}
+            placeholder={SUGGESTION_SEARCH_FORMAT}
           />         
         </Header>
       </>
@@ -114,4 +121,4 @@ class HeaderDemo extends React.Component<LayoutContextProps, HeaderDemoState> {
   }
 }
 
-export default withLayoutAware(HeaderDemo);
+export default withLayoutAware(HeaderModule);

@@ -6,7 +6,6 @@ export { default as Button } from './components/Button';
 export { default as Card } from './components/Card';
 export { default as Col } from './components/Grid/Col';
 export { default as Container } from './components/Grid/Container';
-export { default as Filter } from './components/Filter';
 export { default as Header } from './components/Header';
 export { default as Heading } from './components/Typography/Heading';
 export { default as Image } from './components/Image';

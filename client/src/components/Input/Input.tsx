@@ -10,6 +10,7 @@ class Input extends Component<InputProps, InputStates> {
     isHidden: false,
     htmlType: 'text',
     tabIndex: 0,
+    placeholder: ''
   };
 
   private inputRef = createRef<HTMLInputElement>();
@@ -120,7 +121,7 @@ class Input extends Component<InputProps, InputStates> {
 
     return (
       <input
-        id={id}
+        id={id}        
         data-testid={`input-${id || 'default'}`}
         className={className}
         onClick={this.handleClick}
