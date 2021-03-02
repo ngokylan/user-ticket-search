@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card rendering should be match with snapshot Description exist 1`] = `
+<div
+  className="card"
+  data-testid="card-default"
+  onKeyPress={[Function]}
+>
+  <div
+    className="card__header"
+  >
+    <p
+      className="-typography text-size-rg"
+      data-testid="-typography-default"
+    >
+      Description
+    </p>
+  </div>
+  <div
+    className="card__content"
+  >
+    <div
+      className="card__content-inner"
+    />
+  </div>
+</div>
+`;
+
+exports[`Card rendering should be match with snapshot Heading exist 1`] = `
+<div
+  className="card"
+  data-testid="card-default"
+  onKeyPress={[Function]}
+>
+  <div
+    className="card__header"
+  >
+    <h3
+      className="sc-dlfnbm typography card__heading heading-size-rg"
+      data-testid="typography-default"
+    >
+      Title
+    </h3>
+  </div>
+  <div
+    className="card__content"
+  >
+    <div
+      className="card__content-inner"
+    />
+  </div>
+</div>
+`;
+
+exports[`Card rendering should be match with snapshot when props role is test 1`] = `
+<div
+  className="card"
+  data-testid="card-default"
+  onKeyPress={[Function]}
+  role="test"
+>
+  <div
+    className="card__content"
+  >
+    <div
+      className="card__content-inner"
+    />
+  </div>
+</div>
+`;
+
+exports[`Card rendering should be match with snapshot when props role is undefined 1`] = `
+<div
+  className="card"
+  data-testid="card-default"
+  onKeyPress={[Function]}
+>
+  <div
+    className="card__content"
+  >
+    <div
+      className="card__content-inner"
+    />
+  </div>
+</div>
+`;

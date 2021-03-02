@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fieldset rendering should be match with snapshot %s 1`] = `
+<fieldset
+  className="fieldset"
+  data-testid="fieldset-default"
+/>
+`;

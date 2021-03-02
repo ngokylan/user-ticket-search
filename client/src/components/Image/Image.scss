@@ -1,0 +1,7 @@
+@import '../../_lib/style/index';
+.image {
+  /* Modifier */
+  &--rounded {
+    border-radius: 6px;
+  }
+}

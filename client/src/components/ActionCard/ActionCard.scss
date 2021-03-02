@@ -1,0 +1,176 @@
+@import '../_lib/style/index';
+
+.actioncard {
+  $this: &;
+  $xSpacing: 20px;
+  $contentLeftSpacing: 64px;
+  $lineHeight: 48px;
+  $headerYPadding: 5px;
+
+  // Modifiers:
+  $isExpandable: '--is-expandable';
+  $isExpanded: '.is-expanded';
+  $absoluteHeader: '--absolute-header';
+
+  @mixin optionsAndExpandButtonsSpacing() {
+    margin-right: -16px;
+    margin-left: 4px;
+
+    @include tablet {
+      margin-left: 8px;
+    }
+  }
+
+  background-color: $white;
+  box-shadow: $shadow-100;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  position: relative;
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    padding: $headerYPadding $xSpacing;
+
+    #{$this + $absoluteHeader} & {
+      @include mobile {
+        position: absolute;
+        right: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &__header-icon {
+    width: $contentLeftSpacing - $xSpacing;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    height: $lineHeight;
+  }
+
+  &__header-content {
+    @include text-style-body-sm();
+
+    flex: 1 0 0%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: $lineHeight;
+    line-height: $lineHeight;
+    position: relative;
+  }
+
+  &__header-content-inner {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    padding-right: 4px;
+  }
+
+  &__header-title {
+    color: $gray-rgba-800;
+    margin-right: 4px;
+  }
+
+  &__header-title-add-on {
+    color: $gray-rgba-700;
+  }
+
+  &__header-badge {
+    display: flex;
+    align-items: center;
+
+    #{$this + $absoluteHeader} & {
+      position: absolute;
+      left: $contentLeftSpacing - $xSpacing;
+
+      @include mobile {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+
+  &__header-options {
+    @include optionsAndExpandButtonsSpacing();
+  }
+
+  &__content-wrapper {
+    display: flex;
+    padding-right: $xSpacing;
+  }
+
+  &__content-inner-wrapper {
+    width: 100%;
+  }
+
+  &__content {
+    padding: 0 0 20px $xSpacing;
+
+    &:not(:first-child) {
+      padding-top: 0;
+    }
+
+    #{$this + $isExpandable} & {
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
+    }
+
+    #{$this + $isExpandable + $isExpanded} & {
+      display: block;
+    }
+  }
+
+  &__content-header-wrapper {
+    padding-top: $headerYPadding;
+    padding-bottom: $headerYPadding;
+  }
+
+  &__content-header {
+    display: flex;
+    align-items: center;
+    min-height: $lineHeight;
+  }
+
+  &__content-icon {
+    width: $contentLeftSpacing - $xSpacing;
+
+    & > * {
+      margin: 0 !important;
+    }
+  }
+
+  &__content-heading {
+    @include text-style-heading-sm();
+
+    margin-right: 8px;
+  }
+
+  &__content-content {
+    padding-left: $contentLeftSpacing - $xSpacing;
+  }
+
+  &__expand-btn-wrapper {
+    @include optionsAndExpandButtonsSpacing();
+
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 8px;
+  }
+
+  &__footer {
+    border-top: 1px solid $gray-400;
+    padding: 8px $xSpacing;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  &__footer-btn {
+    margin-left: 8px;
+  }
+}

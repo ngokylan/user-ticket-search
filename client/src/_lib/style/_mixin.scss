@@ -1,0 +1,326 @@
+@import './param';
+
+// Font Size & styles
+@mixin text-style-title-xl {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: -0.75px;
+}
+
+@mixin text-style-title-lg {
+  font-weight: 600;
+  font-size: 33px;
+  line-height: 50px;
+  letter-spacing: -0.75px;
+}
+
+@mixin text-style-title-rg {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  letter-spacing: -0.75px;
+}
+
+@mixin text-style-title-sm {
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 34px;
+  letter-spacing: -0.3px;
+}
+
+@mixin text-style-title-xs {
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 28px;
+  letter-spacing: -0.15px;
+}
+
+@mixin text-style-title-xxs {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.07px;
+}
+
+@mixin text-style-heading {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 28px;
+}
+
+@mixin text-style-heading-sm {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin text-style-heading-xs {
+  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+}
+
+@mixin text-style-heading-xxs {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+}
+
+@mixin text-style-body-lg {
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 28px;
+}
+
+@mixin text-style-body-rg {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin text-style-body-sm {
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
+
+@mixin text-style-body-xs {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.85px;
+}
+
+@mixin text-style-button {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 20px;
+  letter-spacing: 1.25px;
+}
+
+@mixin text-style-status {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 1.25px;
+}
+
+/** 
+ * Slightly lighten a color
+ * @access public
+ * @param {Color} $color - color to tint
+ * @param {Number} $percentage - percentage of `$color` in returned color
+ * @return {Color}
+*/
+
+@function lighten($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie);
+}
+
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin noscroll {
+  @include desktop-max {
+    html.noscroll {
+      &.isIOS {
+        overflow: hidden;
+        height: 100%;
+      }
+
+      body {
+        overflow: hidden;
+        height: 100%;
+      }
+    }
+  }
+}
+
+/** 
+ * Screen Size Media Queries
+*/
+@mixin small-mobile-only {
+  @media (max-width: #{$small-mobile-max}) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media (max-width: #{$mobile-max}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: #{$mobile-min}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-min}) {
+    @content;
+  }
+}
+
+@mixin tablet-max {
+  @media (max-width: #{$tablet-max}) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: #{$tablet-min}) and (max-width: #{$tablet-max}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-min}) {
+    @content;
+  }
+}
+
+@mixin desktop-max {
+  @media (max-width: #{$desktop-max}) {
+    @content;
+  }
+}
+
+@mixin desktop-lg {
+  @media (min-width: #{$desktop-lg-min}) {
+    @content;
+  }
+}
+
+@mixin desktop-lg-max {
+  @media (max-width: #{$desktop-lg-max}) {
+    @content;
+  }
+}
+
+@mixin desktop-xl {
+  @media (min-width: #{$desktop-xl-min}) {
+    @content;
+  }
+}
+
+@mixin desktop-xl-max {
+  @media (max-width: #{$desktop-xl-max}) {
+    @content;
+  }
+}
+
+@mixin desktop-xxl {
+  @media (min-width: #{$desktop-xxl-min}) {
+    @content;
+  }
+}
+@mixin scroll-smooth {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+// scrollbar-style
+@mixin scrollbar-style {
+  @include scroll-smooth;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 40px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Popover content
+@mixin popover-content {
+  opacity: 1;
+  visibility: visible;
+  border: 1px solid $gray-400;
+  border-radius: 6px;
+  transition: all 0.25s;
+  box-shadow: $shadow-200;
+  padding: 24px;
+  width: 240px;
+  max-width: 100vw;
+  background-color: #fff;
+}
+
+@mixin scrollbar-style-dark {
+  @include scroll-smooth;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 40px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.07);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.15);
+  }
+}
+
+@mixin custom-icon-svg {
+  .icon__svg {
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 24px;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    user-select: none;
+    flex-shrink: 0;
+  }
+}
+
+// Safari transition fix
+@mixin transition-fix {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}

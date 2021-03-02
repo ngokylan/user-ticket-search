@@ -1,6 +1,10 @@
 # User Search App
 
-This repository is for searching user using [React](https://nestjs.com), [Redux](https://redux.js.org/), [Storybook](https://storybook.js.org/) framework.
+### Trello board tasks management
+
+https://trello.com/b/58hOnlEB/user-search-zendesk
+
+This repository is for searching user using [React](https://nestjs.com), [Redux](https://redux.js.org/), [Styleguidist](https://react-styleguidist.js.org/) framework.
 
 Below is the test coverage summary for this repo
 
@@ -8,30 +12,72 @@ Below is the test coverage summary for this repo
 | --------------------------------------------- | ----------------------------------------- | ------------------------------------------- | ----------------------------------- |
 | ![Statements](https://img.shields.io/badge/Coverage-2.5%25-red.svg) | ![Branches](https://img.shields.io/badge/Coverage-0%25-red.svg) | ![Functions](https://img.shields.io/badge/Coverage-11.11%25-red.svg) | ![Lines](https://img.shields.io/badge/Coverage-2.7%25-red.svg) |
 
-### 1. How to install it
-
+### 1. Build container
 ```sh
-yarn install
+docker-compose build
 ```
-Ensure also that [Yarn is installed](https://classic.yarnpkg.com/en/docs/install/#mac-stable) on your work station
+Ensure also that [Docker is installed and running](https://www.docker.com/products/docker-desktop) on your work station
 
-### 2. How to run it
-
-
-You can runs the app in the development mode.<br>
+### 2. Start container
 
 ```sh
-yarn start
+docker-compose up
 ```
 
 ### 3. How to test it
 
+
 ```bash
+# install node_modules for client
+$ cd client
+$ yarn
+
 # unit tests with coverage
 $ yarn test
 
-# e2e tests
+# e2e tests (havent done yet)
 $ yarn test:e2e
 ```
 
-Launches the test runner<br>
+### 3. How to use frontend app
+
+Client url to run application
+
+```
+http://localhost:3000
+```
+
+The search bar will accept following search format
+
+```
+user; {"fieldname":"value"}
+```
+
+```
+organization; {"fieldname":"value"}
+```
+
+```
+ticket; {"fieldname":"value"}
+```
+
+Where `{fieldname}` is the field and `{value}` is the filter value
+
+### 4. How to use backend app
+
+Backend url for REST API
+
+```
+http://localhost:8000
+```
+
+Available routes:
+```
+http://localhost:8000/v1/users
+```
+```
+http://localhost:8000/v1/organizations
+```
+```
+http://localhost:8000/v1/tickets
+```

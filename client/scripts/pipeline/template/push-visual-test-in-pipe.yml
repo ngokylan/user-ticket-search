@@ -1,0 +1,26 @@
+pipelines:
+  custom:
+    test-visual-dump:
+      - step:
+          name: 'Test: visual regression'
+          image: circleci/node:8.12.0-browsers
+          caches:
+            - node
+          script:
+            - npm uninstall cypress
+            - npm install
+            - PUPPETEER__DIR="./node_modules/puppeteer/.local-chromium"
+            - echo "Install linux-672088 local-chromium ....."
+            - sudo unzip -o ./scripts/chromium/linux-672088.zip -d $PUPPETEER__DIR > /dev/null
+            - CI=true ./node_modules/.bin/react-scripts test --updateSnapshot --roots "${PWD}/src" --testMatch "${PWD}/src/**/*.visual.{js,ts}" --verbose --watchAll=false
+            # For debug if we find there is issue in CI and we can not replicate it when we run visual test on local container
+            # then we can enable the following so we can push the difference and debug it
+            - VERSION=$(npm --no-git-tag-version version patch)
+            - git add . && git commit -am "Update visual regression screenshots" --no-verify
+            - git checkout -b visual-test/$VERSION
+            - git push --set-upstream origin visual-test/$VERSION -f
+
+definitions:
+  caches:
+    npm: $HOME/.npm
+    cypress: $HOME/.cache/Cypress

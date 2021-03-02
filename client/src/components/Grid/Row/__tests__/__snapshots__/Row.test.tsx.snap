@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row rendering should be match with snapshot 1`] = `
+<div
+  className="row"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props alignContent is around 1`] = `
+<div
+  className="row align-content-around"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props alignContent is between 1`] = `
+<div
+  className="row align-content-between"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props alignContent is center 1`] = `
+<div
+  className="row align-content-center"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props alignContent is end 1`] = `
+<div
+  className="row align-content-end"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props alignContent is start 1`] = `
+<div
+  className="row align-content-start"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props alignContent is stretch 1`] = `
+<div
+  className="row align-content-stretch"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props alignItems is baseline 1`] = `
+<div
+  className="row align-items-baseline"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props alignItems is center 1`] = `
+<div
+  className="row align-items-center"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props alignItems is end 1`] = `
+<div
+  className="row align-items-end"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props alignItems is start 1`] = `
+<div
+  className="row align-items-start"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props alignItems is stretch 1`] = `
+<div
+  className="row align-items-stretch"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props className is className 1`] = `
+<div
+  className="row className"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props className is false 1`] = `
+<div
+  className="row"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props className is null 1`] = `
+<div
+  className="row"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props className is undefined 1`] = `
+<div
+  className="row"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props direction is column 1`] = `
+<div
+  className="row flex-column"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props direction is column-reverse 1`] = `
+<div
+  className="row flex-column-reverse"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props direction is row 1`] = `
+<div
+  className="row flex-row"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props direction is row-reverse 1`] = `
+<div
+  className="row flex-row-reverse"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props isInline is false 1`] = `
+<div
+  className="row"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props isInline is true 1`] = `
+<div
+  className="row flex-inline"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props isNoGutters is false 1`] = `
+<div
+  className="row"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props isNoGutters is true 1`] = `
+<div
+  className="row no-gutters"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props justifyContent is around 1`] = `
+<div
+  className="row justify-content-around"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props justifyContent is between 1`] = `
+<div
+  className="row justify-content-between"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props justifyContent is center 1`] = `
+<div
+  className="row justify-content-center"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props justifyContent is end 1`] = `
+<div
+  className="row justify-content-end"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props justifyContent is start 1`] = `
+<div
+  className="row justify-content-start"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props wrap is nowrap 1`] = `
+<div
+  className="row flex-nowrap"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props wrap is wrap 1`] = `
+<div
+  className="row flex-wrap"
+  role="row"
+/>
+`;
+
+exports[`Row rendering should be match with snapshot when props wrap is wrap-reverse 1`] = `
+<div
+  className="row flex-wrap-reverse"
+  role="row"
+/>
+`;

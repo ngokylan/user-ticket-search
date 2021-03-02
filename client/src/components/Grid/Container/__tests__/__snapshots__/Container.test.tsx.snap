@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container rendering should be match with snapshot 1`] = `
+<div
+  className="sc-bdfBwQ kfOOAF"
+/>
+`;
+
+exports[`Container rendering should be match with snapshot when props isFluid is false 1`] = `
+<div
+  className="sc-bdfBwQ kfOOAF"
+/>
+`;
+
+exports[`Container rendering should be match with snapshot when props isFluid is true 1`] = `
+<div
+  className="sc-bdfBwQ kfOOAF"
+/>
+`;
+
+exports[`Container rendering should be match with snapshot when props role is test 1`] = `
+<div
+  className="sc-bdfBwQ kfOOAF"
+  role="test"
+/>
+`;
+
+exports[`Container rendering should be match with snapshot when props role is undefined 1`] = `
+<div
+  className="sc-bdfBwQ kfOOAF"
+/>
+`;
+
+exports[`Container rendering should be match with snapshot when props size is lg 1`] = `
+<div
+  className="sc-bdfBwQ bpbFPw"
+  size="lg"
+/>
+`;
+
+exports[`Container rendering should be match with snapshot when props size is md 1`] = `
+<div
+  className="sc-bdfBwQ kfOOAF"
+  size="md"
+/>
+`;
+
+exports[`Container rendering should be match with snapshot when props size is undefined 1`] = `
+<div
+  className="sc-bdfBwQ kfOOAF"
+/>
+`;

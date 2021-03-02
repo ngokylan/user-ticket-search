@@ -1,4 +1,17 @@
 
+# Set the SQL mode to strict 
+# to avoid this issue ERROR 1406 (22001) at line 29: Data too long for column 'name' at row 9
+SET @@global.sql_mode="NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION";
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
 # Dump of table organization
 # ------------------------------------------------------------
 
@@ -6,20 +19,20 @@ DROP TABLE IF EXISTS `organization`;
 
 CREATE TABLE `organization` (
   `_id` int(11) NOT NULL,
-  `url` varchar(56) NOT NULL,
-  `external_id` varchar(36) NOT NULL,
-  `name` varchar(9) NOT NULL,
-  `domain_names0` varchar(13) NOT NULL,
-  `domain_names1` varchar(13) NOT NULL,
-  `domain_names2` varchar(13) NOT NULL,
-  `domain_names3` varchar(13) NOT NULL,
-  `created_at` varchar(26) NOT NULL,
-  `details` varchar(10) NOT NULL,
+  `url` text NOT NULL,
+  `external_id` varchar(100) NOT NULL DEFAULT '',
+  `name` varchar(50) NOT NULL DEFAULT '',
+  `domain_names0` varchar(100) NOT NULL DEFAULT '',
+  `domain_names1` varchar(100) NOT NULL DEFAULT '',
+  `domain_names2` varchar(100) NOT NULL DEFAULT '',
+  `domain_names3` varchar(100) NOT NULL DEFAULT '',
+  `created_at` varchar(50) NOT NULL DEFAULT '',
+  `details` varchar(100) NOT NULL DEFAULT '',
   `shared_tickets` varchar(5) NOT NULL,
-  `tags0` varchar(9) NOT NULL,
-  `tags1` varchar(10) NOT NULL,
-  `tags2` varchar(10) NOT NULL,
-  `tags3` varchar(7) NOT NULL,
+  `tags0` varchar(50) NOT NULL DEFAULT '',
+  `tags1` varchar(50) NOT NULL DEFAULT '',
+  `tags2` varchar(50) NOT NULL DEFAULT '',
+  `tags3` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -64,25 +77,25 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `ticket`;
 
 CREATE TABLE `ticket` (
-  `_id` varchar(36) NOT NULL,
-  `url` varchar(83) NOT NULL,
-  `external_id` varchar(36) NOT NULL,
-  `created_at` varchar(26) NOT NULL,
-  `type` varchar(8) DEFAULT NULL,
-  `subject` varchar(44) NOT NULL,
-  `description` varchar(211) DEFAULT NULL,
-  `priority` varchar(6) NOT NULL,
-  `status` varchar(7) NOT NULL,
+  `_id` varchar(100) NOT NULL DEFAULT '',
+  `url` text NOT NULL,
+  `external_id` varchar(100) NOT NULL DEFAULT '',
+  `created_at` varchar(50) NOT NULL DEFAULT '',
+  `type` varchar(20) DEFAULT NULL,
+  `subject` varchar(200) NOT NULL DEFAULT '',
+  `description` text,
+  `priority` varchar(20) NOT NULL DEFAULT '',
+  `status` varchar(20) NOT NULL DEFAULT '',
   `submitter_id` int(11) NOT NULL,
   `assignee_id` int(11) DEFAULT NULL,
   `organization_id` int(11) DEFAULT NULL,
-  `tags0` varchar(20) NOT NULL,
-  `tags1` varchar(30) NOT NULL,
-  `tags2` varchar(20) NOT NULL,
-  `tags3` varchar(30) NOT NULL,
-  `has_incidents` varchar(5) NOT NULL,
-  `due_at` varchar(26) DEFAULT NULL,
-  `via` varchar(5) NOT NULL,
+  `tags0` varchar(50) NOT NULL DEFAULT '',
+  `tags1` varchar(50) NOT NULL DEFAULT '',
+  `tags2` varchar(50) NOT NULL DEFAULT '',
+  `tags3` varchar(50) NOT NULL DEFAULT '',
+  `has_incidents` varchar(20) NOT NULL DEFAULT '',
+  `due_at` varchar(50) DEFAULT NULL,
+  `via` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`_id`),
   KEY `fk_submitter_id` (`submitter_id`),
   KEY `fk_sassignee_id` (`assignee_id`),
@@ -306,27 +319,27 @@ DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
   `_id` int(11) NOT NULL,
-  `url` varchar(47) NOT NULL,
-  `external_id` varchar(36) NOT NULL,
-  `name` varchar(19) NOT NULL,
-  `alias` varchar(15) DEFAULT NULL,
-  `created_at` varchar(26) NOT NULL,
-  `active` varchar(5) NOT NULL,
-  `verified` varchar(5) DEFAULT NULL,
-  `shared` varchar(5) NOT NULL,
-  `locale` varchar(5) DEFAULT NULL,
-  `timezone` varchar(30) DEFAULT NULL,
-  `last_login_at` varchar(26) NOT NULL,
-  `email` varchar(30) DEFAULT NULL,
-  `phone` varchar(12) NOT NULL,
-  `signature` varchar(21) NOT NULL,
+  `url` text NOT NULL,
+  `external_id` varchar(50) NOT NULL DEFAULT '',
+  `name` varchar(100) NOT NULL DEFAULT '',
+  `alias` varchar(50) DEFAULT NULL,
+  `created_at` varchar(50) NOT NULL DEFAULT '',
+  `active` varchar(10) NOT NULL DEFAULT '',
+  `verified` varchar(10) DEFAULT NULL,
+  `shared` varchar(10) NOT NULL DEFAULT '',
+  `locale` varchar(50) DEFAULT NULL,
+  `timezone` varchar(50) DEFAULT NULL,
+  `last_login_at` varchar(50) NOT NULL DEFAULT '',
+  `email` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) NOT NULL DEFAULT '',
+  `signature` varchar(50) NOT NULL DEFAULT '',
   `organization_id` int(11) DEFAULT NULL,
-  `tags0` varchar(12) NOT NULL,
-  `tags1` varchar(14) NOT NULL,
-  `tags2` varchar(18) NOT NULL,
-  `tags3` varchar(13) NOT NULL,
-  `suspended` varchar(5) NOT NULL DEFAULT '',
-  `role` varchar(8) NOT NULL,
+  `tags0` varchar(50) NOT NULL DEFAULT '',
+  `tags1` varchar(50) NOT NULL DEFAULT '',
+  `tags2` varchar(50) NOT NULL DEFAULT '',
+  `tags3` varchar(50) NOT NULL DEFAULT '',
+  `suspended` varchar(20) NOT NULL DEFAULT '',
+  `role` varchar(20) NOT NULL DEFAULT '',
   PRIMARY KEY (`_id`),
   KEY `fk_organization_id` (`organization_id`),
   CONSTRAINT `fk_organization_id` FOREIGN KEY (`organization_id`) REFERENCES `organization` (`_id`)
