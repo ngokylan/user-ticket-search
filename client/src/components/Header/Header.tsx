@@ -59,12 +59,7 @@ function Header({
                   )}
                 </div>
               </div>
-            </div>
-            {tabs && (
-              <HeaderTabsStyled primaryColor={theme && theme.primaryColor}>
-                <HeaderTabs tabs={tabs} />
-              </HeaderTabsStyled>
-            )}
+            </div>           
           </div>
         </div>
       </div>
