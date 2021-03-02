@@ -38,13 +38,25 @@ app.get(`${constantService.API_VERSION.V1}/users`, async (req, res) => {
 });
 
 app.get(`${constantService.API_VERSION.V1}/organizations`, async (req, res) => {
-  // const { table } = req.query;  
-  const result = await fetchOrganizations('', '');
-  return res.send(result);
+  try {
+    const { filter } = req.query;    
+    const result = await fetchOrganizations('', filter);
+    return res.send(result);
+  } catch (exception) {
+    res.status(400).send({
+      message: exception.message
+   });
+  }
 });
 
 app.get(`${constantService.API_VERSION.V1}/tickets`, async (req, res) => {
-  // const { table } = req.query;  
-  const result = await fetchTickets('', '');
-  return res.send(result);
+  try {
+    const { filter } = req.query;    
+    const result = await fetchTickets('', filter);
+    return res.send(result);
+  } catch (exception) {
+    res.status(400).send({
+      message: exception.message
+   }); 
+  } 
 });
